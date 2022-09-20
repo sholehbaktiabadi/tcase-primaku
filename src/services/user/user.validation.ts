@@ -20,3 +20,9 @@ export const createUserValidation = (dto: UserDto): {error: ValidationError | un
     const { error, value } = schema.validate(dto);
     return {error, value}
 }
+
+export const paramsValidation = (id: number): {error: ValidationError | undefined, value: any} =>{
+    const schema = Joi.number().required()
+    const { error, value } = schema.validate(id);
+    return {error, value}
+}

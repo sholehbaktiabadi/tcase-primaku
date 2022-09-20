@@ -12,10 +12,10 @@ export class User{
     @Column({name: 'name', type: 'varchar', nullable: false })
     name!: string;
 
-    @Column({name: 'email', type: 'varchar', nullable: false })
+    @Column({name: 'email', type: 'varchar', nullable: false, unique: true })
     email!: string;
     
-    @Column({name: 'password', type: 'text', nullable: false })
+    @Column({name: 'password', type: 'text', nullable: false, select: false })
     password!: string;
 
     @Column({name: 'role', type: 'varchar', nullable: false })

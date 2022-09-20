@@ -1,6 +1,5 @@
-import { UpdateResult, DeleteResult } from "typeorm"
+import { hashPassword } from "../../helper/hashing"
 import { UserDto } from "./user.dto"
-import { User } from "./user.entity"
 import { UserRepository } from "./user.repository"
 
 export class UserService{
@@ -11,7 +10,9 @@ export class UserService{
 
     async create(dto: UserDto){
         try {
-            return await this.userRepo.create(dto)
+            dto.password = hashPassword(dto.password)
+            await this.userRepo.create(dto)
+            return { success: true } 
         } catch (error) {
             throw error
         }
