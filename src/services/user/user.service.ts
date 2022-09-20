@@ -36,7 +36,8 @@ export class UserService{
 
     async updatePassword(id: number, password: string){
         try {
-            return await this.userRepo.updatePassword(id, password)
+            const hashed = hashPassword(password)
+            return await this.userRepo.updatePassword(id, hashed)
         } catch (error) {
             throw error
         }

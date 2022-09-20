@@ -14,5 +14,7 @@ export const userRoutes = [
     router.get('/user', authBoth, userController.findAll),
     router.get('/user/:id', authBoth, userController.getDetails),
     router.delete('/user/:id', authBoth, userController.delete),
-    router.patch('/user/:id', authBoth, userController.update)
+    router.patch('/user/:id', authBoth, userController.update),
+    router.put('/user/:id', authBoth, userController.updatePassword)
+
 ]

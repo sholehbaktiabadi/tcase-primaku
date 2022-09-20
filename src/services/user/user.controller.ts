@@ -1,7 +1,7 @@
 import { Request, Response } from "express"
 import { ResErr, ResOK } from "../../helper/response"
 import { UserService } from "./user.service"
-import { createUserValidation, paramsValidation, updateUserValidation } from "./user.validation"
+import { createUserValidation, paramsValidation, updatePasswordValidation, updateUserValidation } from "./user.validation"
 
 export class UserController{
     private userService
@@ -35,6 +35,24 @@ export class UserController{
             isUserExist.name = vbody.value.name ?? isUserExist.name
             isUserExist.role = vbody.value.role ?? isUserExist.role
             const data = await this.userService.update(+id, isUserExist)
+            return ResOK(res, data, 'ok')
+        } catch (err) {
+            return ResErr(res, 500, err)
+        }
+    }
+
+    updatePassword = async (req: Request, res: Response) => {
+        try {
+            const body = req.body
+            const id = req.params.id
+            const vParams = paramsValidation(+id)
+            if(vParams.error) return ResErr(res, 400, vParams.error.message)
+            const isUserExist = await this.userService.getOne(+id)
+            if(!isUserExist) return ResErr(res, 404, 'user not found')
+            const vbody = updatePasswordValidation(body)
+            if(vbody.error) return ResErr(res, 400, vbody.error.message)
+            isUserExist.password = vbody.value.password
+            const data = await this.userService.updatePassword(+id, isUserExist.password)
             return ResOK(res, data, 'ok')
         } catch (err) {
             return ResErr(res, 500, err)
