@@ -34,9 +34,17 @@ export class UserService{
         }
     }
 
-    async update(id: number, password: string){
+    async updatePassword(id: number, password: string){
         try {
             return await this.userRepo.updatePassword(id, password)
+        } catch (error) {
+            throw error
+        }
+    }
+
+    async update(id: number, dto: UserDto){
+        try {
+            return await this.userRepo.update(id, dto)
         } catch (error) {
             throw error
         }

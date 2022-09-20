@@ -26,3 +26,13 @@ export const paramsValidation = (id: number): {error: ValidationError | undefine
     const { error, value } = schema.validate(id);
     return {error, value}
 }
+
+export const updateUserValidation = (dto: UserDto): {error: ValidationError | undefined, value: any} =>{
+    const schema = Joi.object({
+        name: Joi.string().optional(),
+        email: Joi.string().optional(),
+        role: Joi.string().optional(),
+    }).unknown(true);
+    const { error, value } = schema.validate(dto);
+    return {error, value}
+}

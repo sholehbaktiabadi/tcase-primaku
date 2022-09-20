@@ -48,6 +48,14 @@ export class UserRepository {
         }
     }
 
+    async update(id: number, dto: UserDto): Promise<UpdateResult> {
+        try {
+            return await this.db.getRepository(User).update(id, dto)
+        } catch (error) {
+            throw error
+        }
+    }
+
     async delete(id: number): Promise<DeleteResult> {
         try {
             return await this.db.getRepository(User).delete(id)

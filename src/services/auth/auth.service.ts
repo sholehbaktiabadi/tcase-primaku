@@ -15,7 +15,7 @@ export class AuthService {
         const isMatch = await comparePassword(password, user.password)
         if (!isMatch) throw 'password not matches'
         const token: { isAdmin: boolean, token: string } = user.role === Role.admin ?
-            { isAdmin: true, token: await generateAccessTokenAdmin(user.id) } : { isAdmin: false, token: await generateAccessToken(user.id) }
+            { isAdmin: true, token: await generateAccessTokenAdmin(user.id, user.role) } : { isAdmin: false, token: await generateAccessToken(user.id, user.role) }
         return token
     }
 
