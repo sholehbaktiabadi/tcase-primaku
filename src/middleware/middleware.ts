@@ -15,7 +15,7 @@ export const authAdmin = (req: Request, res: Response, next: NextFunction) => {
       const decoded = jwt.verify(token, Env().JWT_SECRET_ADMIN)
       req.user = decoded
     } catch (err) {
-      return ResErr(res, 403, err)
+      return ResErr(res, 401, err)
     }
     return next()
 }
@@ -30,7 +30,7 @@ export const authUser = (req: Request, res: Response, next: NextFunction) => {
       const decoded = jwt.verify(token, Env().JWT_SECRET)
       req.user = decoded
     } catch (err) {
-      return ResErr(res, 403, err)
+      return ResErr(res, 401, err)
     }
     return next()
 }
@@ -47,7 +47,7 @@ export const authBoth = (req: Request, res: Response, next: NextFunction) => {
       decoded = jwt.verify(token, user.role == Role.admin ? Env().JWT_SECRET_ADMIN : Env().JWT_SECRET  )
       req.user = decoded
     } catch (err) {
-      return ResErr(res, 403, err)
+      return ResErr(res, 401, err)
     }
     return next()
 }
