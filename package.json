@@ -1,0 +1,38 @@
+{
+  "name": "tcase-primaku",
+  "version": "1.0.0",
+  "description": "test case primaku",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon ./src/index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sholehbaktiabadi/tcase-primaku.git"
+  },
+  "keywords": [
+    "tcase",
+    "primaku"
+  ],
+  "author": "sholeh bakti abadi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sholehbaktiabadi/tcase-primaku/issues"
+  },
+  "homepage": "https://github.com/sholehbaktiabadi/tcase-primaku#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "joi": "^17.6.0",
+    "joi-password": "^4.0.0",
+    "mysql": "^2.18.1",
+    "typeorm": "^0.3.10"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.14",
+    "@types/joi": "^17.2.3",
+    "dotenv": "^16.0.2",
+    "nodemon": "^2.0.20",
+    "ts-node": "^10.9.1"
+  }
+}
