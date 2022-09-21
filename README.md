@@ -1,5 +1,5 @@
 <p align="left">
-<a target="blank"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" alt="typescript" width="25" height="25"/></a>
+<a target="blank"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" alt="typescript" width="80" height="80"/></a>
 </p>
 
 ## Installation
@@ -27,8 +27,10 @@ $ npm run start
 ## Run by Docker image
 
 ```bash
+# build image 
 $ docker build -t primaku .
 
+# run image
 $ docker run -e SERVER_PORT= -e JWT_SECRET= -e JWT_SECRET_ADMIN= -e DB_HOST=host.docker.internal -e DB_PORT= -e DB_USERNAME= -e DB_PASSWORD= -e DB_NAME= -p $PORT:$PORT primaku
 ```
 
@@ -38,7 +40,7 @@ $ docker run -e SERVER_PORT= -e JWT_SECRET= -e JWT_SECRET_ADMIN= -e DB_HOST=host
 <p align="center">A tech enthusiast from Indonesia</p>
 <hr style="height:1px">
 
-- 🔭 I’m currently working on **PT SAri Kaldu Nabati Indonesia**
+- 🔭 I’m currently working on **PT Sari Kaldu Nabati Indonesia**
 
 - 👨‍💻 All of my projects are available at [https://github.com/sholehbaktiabadi](https://github.com/sholehbaktiabadi)
 
