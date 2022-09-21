@@ -4,7 +4,9 @@
   "description": "test case primaku",
   "main": "index.js",
   "scripts": {
+    "start": "ts-node ./build/index.js",
     "dev": "nodemon --files ./src/index.ts",
+    "build": "rimraf ./dist && tsc",
     "seed": "ts-node ./node_modules/typeorm-extension/dist/cli/index.js seed -d ./src/config/database.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -39,6 +41,7 @@
     "@types/jsonwebtoken": "^8.5.9",
     "dotenv": "^16.0.2",
     "nodemon": "^2.0.20",
+    "rimraf": "^3.0.2",
     "ts-node": "^10.9.1",
     "typescript": "^4.8.3"
   }
