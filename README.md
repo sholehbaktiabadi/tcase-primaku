@@ -2,6 +2,12 @@
 <a target="blank"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" alt="typescript" width="80" height="80"/></a>
 </p>
 
+## Project Documentation
+
+```
+https://documenter.getpostman.com/view/7919997/2s7Z7SNxDm
+```
+
 ## Installation
 
 ```bash
