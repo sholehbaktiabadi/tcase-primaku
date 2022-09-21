@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon --files ./src/index.ts",
+    "seed": "ts-node ./node_modules/typeorm-extension/dist/cli/index.js seed -d ./src/config/database.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -28,7 +29,8 @@
     "joi-password": "^4.0.0",
     "jsonwebtoken": "^8.5.1",
     "mysql": "^2.18.1",
-    "typeorm": "^0.3.10"
+    "typeorm": "^0.3.10",
+    "typeorm-extension": "^2.1.10"
   },
   "devDependencies": {
     "@types/bcrypt": "^5.0.0",
